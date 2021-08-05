@@ -17,5 +17,6 @@ while(True):
   draw.text((50, 100),str(tempUte)+"°",textColor,font=fontTemp)
   draw.text((560, 290),str(tempInne)+"°",textColor,font=fontTemp)
   im.save("img/image.png")
+  os.system("sudo killall -9 fbi")
   os.system("sudo fbi --autozoom --noverbose --vt 1 img/image.png")
   time.sleep(2)
