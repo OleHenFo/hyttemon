@@ -1,4 +1,4 @@
-import time,random
+import time,random,os
 from PIL import Image,ImageDraw,ImageFont
 
 fontTemp = ImageFont.truetype("font/Roboto-Medium.ttf", 136)
@@ -16,5 +16,6 @@ while(True):
   
   draw.text((50, 100),str(tempUte)+"°",textColor,font=fontTemp)
   draw.text((560, 290),str(tempInne)+"°",textColor,font=fontTemp)
-  im.show()
+  im.save("img/image.png")
+  os.system("sudo fbi --autozoom --noverbose --vt 1 img/image.png")
   time.sleep(2)
