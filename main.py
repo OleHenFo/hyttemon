@@ -32,8 +32,8 @@ while DS_SENSOR is None:
 
 logging.debug('Config ok')
 
-ADAFRUIT_IO_USERNAME = "olehenfo"
-ADAFRUIT_IO_KEY = "aio_DsaK3203FbMjD7nGmcEbjYS6QNhy"
+ADAFRUIT_IO_USERNAME = " USRERNAME HERE " # TODO: Set up .env
+ADAFRUIT_IO_KEY = " API KEY HERE " # TODO: Set up .env
 
 # Adafruit IO
 def connectAdaIO():
@@ -42,7 +42,7 @@ def connectAdaIO():
     aio = Client(ADAFRUIT_IO_USERNAME, ADAFRUIT_IO_KEY)
     inside_feed = aio.feeds('hytte-temp-inside')
     humid_feed = aio.feeds('hytte-humid-inside')
-    outside_feed = aio.feeds('hytte-temp-outside')
+    outside_feed = aio.feeds('hytte-temp-outside') # TODO: Feeds should be in .env too probably
     logging.debug('IO connected')
     return {"aio":aio,"itempfeed":inside_feed,"otempfeed":outside_feed,"humidfeed":humid_feed}
   except:
